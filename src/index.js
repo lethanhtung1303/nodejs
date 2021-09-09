@@ -7,6 +7,10 @@ const port = 3000;
 
 const router = require('./router');
 
+const db = require('./config/db');
+
+db.connect();
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
