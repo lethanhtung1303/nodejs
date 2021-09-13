@@ -22,20 +22,6 @@ class CourseController {
             })
             .catch(next);
     }
-
-    create(req, res) {
-        res.render('./course/create');
-    }
-
-    store(req, res) {
-        const formData = req.body;
-        formData.thumbnail = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
-        const course = new Courses(formData);
-        course
-            .save()
-            .then(() => res.redirect('/'))
-            .catch((error) => {});
-    }
 }
 
 module.exports = new CourseController();
