@@ -45,5 +45,11 @@ class MeController {
             .then(() => res.redirect('./course'))
             .catch(next);
     }
+
+    destroy(req, res, next) {
+        Courses.deleteOne({ _id: req.params._id })
+            .then(() => res.redirect('back'))
+            .catch(next);
+    }
 }
 module.exports = new MeController();
