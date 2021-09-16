@@ -1,9 +1,11 @@
 class SearchController {
-    search(req, res) {
+    // [GET] /search/search
+    search(req, res, next) {
         res.render('./search/search');
     }
 
-    detail(req, res) {
+    // [GET] /search/detail
+    detail(req, res, next) {
         res.render('./search/detail');
     }
 }
