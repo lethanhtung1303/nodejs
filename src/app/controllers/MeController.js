@@ -5,10 +5,11 @@ const { multipleMongooseToObject } = require('../../util/mongoose');
 class MeController {
     // [GET] /me/course
     course(req, res, next) {
-        Courses.find({})
-            .then((course) =>
+        Promise.all([Courses.find({}), Courses.countDocumentsDeleted()])
+            .then(([course, countDeleted]) =>
                 res.render('./me/course', {
                     course: multipleMongooseToObject(course),
+                    countDeleted,
                 }),
             )
             .catch(next);
@@ -43,6 +44,19 @@ class MeController {
             .save()
             .then(() => res.redirect('./course'))
             .catch((error) => {});
+    }
+
+    // [POST] /me/handle-form-action
+    handleFormAction(req, res, next) {
+        switch (req.body.action) {
+            case 'delete':
+                Courses.delete({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
+            default:
+                res.json({ msg: 'Invalid action!' });
+        }
     }
 
     // [GET] /me/edit
