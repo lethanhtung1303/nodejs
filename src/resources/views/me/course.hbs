@@ -24,7 +24,7 @@
       </select>
     </div>
 
-    <button class="btn btn-primary btn-sm btn-check-all disabled"> Thực hiện</button>
+    <button class="btn btn-primary btn-sm btn-check-all "disabled> Thực hiện</button>
 
   </div>
 
@@ -120,10 +120,10 @@
     function renderCheckAllBtn() {
       var checkedCount = $('input[name="courseIds[]"]:checked').length;
 
-      if (checkedCount) {
-        btnCheckAll.removeClass('disabled');
+      if (checkedCount > 0) {
+        btnCheckAll.attr('disabled', false);
       } else {
-        btnCheckAll.addClass('disabled');
+        btnCheckAll.attr('disabled', true);
       }
     }
 
@@ -142,16 +142,5 @@
     }
 
     courseItemChecked.change(checkedItem);
-
-    function btnCheckAllSubmit(e) {
-      var isSubmittable = !$(this).hasClass('disabled');
-
-      if (!isSubmittable) {
-        e.preventDefault();
-      }
-    }
-
-    btnCheckAll.on('submit', btnCheckAllSubmit)
-
   });
 </script>

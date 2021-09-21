@@ -54,6 +54,16 @@ class MeController {
                     .then(() => res.redirect('back'))
                     .catch(next);
                 break;
+            case 'restore':
+                Courses.restore({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
+            case 'force-delete':
+                Courses.deleteMany({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
             default:
                 res.json({ msg: 'Invalid action!' });
         }

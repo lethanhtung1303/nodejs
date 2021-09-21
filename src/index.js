@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const app = express();
 const port = 3000;
 
-const router = require('./router');
+const router = require('./routes');
 
 const db = require('./config/db');
 
