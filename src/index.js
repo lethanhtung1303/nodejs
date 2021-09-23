@@ -7,14 +7,9 @@ const methodOverride = require('method-override');
 const app = express();
 const port = 3000;
 
-const router = require('./routes');
+const route = require('./routes');
 
 const db = require('./config/db');
-
-db.connect();
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('*/css', express.static(path.join(__dirname, 'public/css')));
 
 app.use(
     express.urlencoded({
@@ -24,6 +19,7 @@ app.use(
 
 app.use(express.json());
 
+// Override method
 app.use(methodOverride('_method'));
 
 // HTTP log
@@ -40,10 +36,19 @@ app.engine(
     }),
 );
 
+// Set view engine
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources', 'views'));
 
-router(app);
+// Static file & SCSS
+app.use(express.static(path.join(__dirname, '/public')));
+app.use('*/css', express.static(path.join(__dirname, '/public/css')));
+app.set('views', path.join(__dirname, '/resources/views'));
+
+// Connect database
+db.connect();
+
+// Route init
+route(app);
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

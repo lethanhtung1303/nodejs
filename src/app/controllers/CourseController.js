@@ -3,7 +3,7 @@ const { mongooseToObject } = require('../../util/mongoose');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class CourseController {
-    // [GET] /course/course
+    // [GET] /course
     course(req, res, next) {
         Courses.find({})
             .then((course) =>
@@ -14,7 +14,7 @@ class CourseController {
             .catch(next);
     }
 
-    // [GET] /course/detail
+    // [GET] /course/:slug
     detail(req, res, next) {
         Courses.findOne({ slug: req.params.slug })
             .then((course) => {

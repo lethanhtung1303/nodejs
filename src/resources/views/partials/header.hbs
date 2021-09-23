@@ -1,66 +1,438 @@
-<nav class='navbar navbar-expand-lg navbar-dark bg-dark mb-4'>
-    <div class='container'>
-        <a href='/'><img
-                src='../img/logo/icon.png'
-                alt='logo'
-                class='header__logo'
-            /></a>
-        <a class='navbar-brand' href='/'>F8 Education</a>
-        <button
-            class='navbar-toggler'
-            type='button'
-            data-toggle='collapse'
-            data-target='#navbarSupportedContent'
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-        >
-            <span class='navbar-toggler-icon'></span>
-        </button>
-
-        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav mr-auto'>
-                <li class='nav-item active'>
-                    <a class='nav-link' href='/news'>News
-                        <span class='sr-only'>(current)</span></a>
-                </li>
-                <li class='nav-item active'>
-                    <a class='nav-link' href='/search'>Search
-                        <span class='sr-only'>(current)</span></a>
-                </li>
-                <li class='nav-item active'>
-                    <a class='nav-link' href='/course'>More course
-                        <span class='sr-only'>(current)</span></a>
-                </li>
-            </ul>
-            <ul class='navbar-nav ml-auto'>
-                <li class='nav-item dropdown'>
-                    <a
-                        class='nav-link dropdown-toggle'
-                        href='#'
-                        id='navbarDropdown'
-                        role='button'
-                        data-toggle='dropdown'
-                        aria-haspopup='true'
-                        aria-expanded='false'
-                    >
-                        <img
-                            src='../img/user/user.png'
-                            alt='user'
-                            class='nav__user'
-                        />
-                        Thanh Tùng
-                    </a>
-                    <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <a class='dropdown-item' href='/me/create'>Add course</a>
-                        <div class='dropdown-divider'></div>
-                        <a class='dropdown-item' href='/me/course'>Khóa học của
-                            tôi</a>
-                        <div class='dropdown-divider'></div>
-                        <a class='dropdown-item' href='#'>Đăng xuất</a>
+<header class="header">
+    <div class="gird">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li class="navbar__list-item"><a class="navbar__list-item-link --separate" href="https://banhang.shopee.vn/">Kênh người bán</a></li>
+                <li class="navbar__list-item navbar__list-item-qr">
+                    <a class="navbar__list-item-link --separate" href="https://shopee.vn/web">Tải ứng dụng</a>
+                    <div class="qr-code --bridge">
+                        <a href="https://shopee.vn/web">
+                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png" alt="QR-CODE" class="qr-code__img">
+                        </a>
+                        <div class="qr-code__apps">
+                            <a class="qr-code__link" href="https://apps.apple.com/vn/app/id959841449"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png" alt="App Store" class="qr-code__apps-item"></a>
+                            <a class="qr-code__link" href="https://play.google.com/store/apps/details?id=com.shopee.vn&referrer=af_tranid%3Drsx9V4J79OX3NH5LwyqLcw%26pid%3DOrganicA%26c%3Dlp_home_and1"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png" alt="GG Play" class="qr-code__apps-item"></a>
+                            <a class="qr-code__link" href="https://appgallery.huawei.com/#/app/C101433653?sharePrepath=ag&channelId=web&detailType=0"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/1ae215920a31f2fc75b00d4ee9ae8551.png" alt="App Galaxy" class="qr-code__apps-item"></a>
+                        </div>
                     </div>
                 </li>
+                <li class="navbar__list-item --text-white">
+
+                    <span>Kết nối</span>
+
+                    <a class="navbar__list-item-link" href="https://www.facebook.com/ltt.1303">
+                        <i class="navbar__list-item-icon fab fa-facebook"></i>
+                    </a>
+
+                    <a class="navbar__list-item-link" href="https://www.instagram.com/ltt.1303/">
+                        <i class="navbar__list-item-icon fab fa-instagram"></i>
+                    </a>
+                </li>
             </ul>
+
+            <ul class="navbar__list">
+                <li class="navbar__list-item --notify">
+                    <a class="navbar__list-item-link" href="https://shopee.vn/user/notifications/order">
+                        <i class="navbar__list-item-icon far fa-bell"></i>
+                            Thông báo
+                    </a>
+                    <div class="navbar__notify --bridge --arrow-top">
+
+                        <header class="navbar__notify-header">
+                            <h3>Thông báo mới nhận</h3>
+                        </header>
+
+                        <ul class="navbar__notify-list">
+
+                            <li class="navbar__notify-item">
+                                <a href="" class="navbar__notify-link --viewed">
+                                    <img src="https://cf.shopee.vn/file/fdeff65827b4383a9a2945d7930bbd14_tn" alt="Thời trang nam" class="navbar__notify-img">
+                                    <div class="navbar__notify-content">
+                                        <span class="navbar__notify-name">Hoàn tiền vào Ví ShopeePay thành công</span>
+                                        <span class="navbar__notify-description">Yêu cầu hoàn tiền cho đơn hàng 210821741G4WMH ₫61.000  sẽ được chuyển vào Ví ShopeePay của bạn.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="navbar__notify-item">
+                                <a href="" class="navbar__notify-link --viewed">
+                                    <img src="https://cf.shopee.vn/file/719fd5040ad21e4f2fa0b32027129a23_tn" alt="Thời trang nam" class="navbar__notify-img">
+                                    <div class="navbar__notify-content">
+                                        <span class="navbar__notify-name">Đơn đã quá hạn thanh toán</span>
+                                        <span class="navbar__notify-description">Đơn hàng 2630914308507804730  bị hủy vì quá hạn thanh toán</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="navbar__notify-item">
+                                <a href="" class="navbar__notify-link">
+                                    <img src="https://cf.shopee.vn/file/ea8c502be73b46dd45c8b2ce1c5db0bb_tn" alt="Thời trang nam" class="navbar__notify-img">
+                                    <div class="navbar__notify-content">
+                                        <span class="navbar__notify-name">Giao kiện hàng thành công</span>
+                                        <span class="navbar__notify-description">Kiện hàng VN210917897005E của đơn hàng đã giao thành công đến bạn.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="navbar__notify-item">
+                                <a href="" class="navbar__notify-link">
+                                    <img src="https://cf.shopee.vn/file/ab888b84fc1024a74fe805959057b87b_tn" alt="Thời trang nam" class="navbar__notify-img">
+                                    <div class="navbar__notify-content">
+                                        <span class="navbar__notify-name">Voucher Hoàn Xu Xtra 15% tối đa 20K Xu cho đơn từ 0Đ.</span>
+                                        <span class="navbar__notify-description">Voucher Hoàn Xu Xtra hoàn 15% tối đa 20K Xu đã có sẵn trong ví voucher. Hiệu lực: 20/08/2021 00:00 - 20/08/2021 23:59. Số lượng có hạn. Dùng ngay bạn nhé!</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <footer class="navbar__notify-footer">
+                                <a href="" class="navbar__notify-footer-btn">Xem tất cả</a>
+                            </footer>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="navbar__list-item"><a class="navbar__list-item-link" href="https://help.shopee.vn/s/"><i class="navbar__list-item-icon far fa-question-circle"></i> Hổ trợ</a></li>
+                <!-- <li class="navbar__list-item"><a class="navbar__list-item-link --strong --separate" href="#">Đăng ký</a></li>
+                <li class="navbar__list-item"><a class="navbar__list-item-link --strong" href="#">Đăng nhập</a></li> -->
+                <li class="navbar__list-item navbar__list-user">
+
+                    <a class="navbar__list-user-link" href="http://localhost:3000/me">
+                        <img src="https://cf.shopee.vn/file/d11fd04a386cb3e08d6118a6f3dc23b4_tn" alt="User" class="navbar__list-user-img">
+                        <span class="navbar__list-user-name">Lê Thanh Tùng</span>
+                    </a>
+
+                    <ul class="navbar__list-user-menu --bridge --arrow-top ">
+
+                        <li class="navbar__list-user-menu-item">
+                            <a href="/course">Tất cả khóa học</a>
+                        </li>
+
+                        <li class="navbar__list-user-menu-item">
+                            <a href="/me/create">Thêm khóa học</a>
+                        </li>
+
+                        <li class="navbar__list-user-menu-item">
+                            <a href="/me/course">Quản lý khóa học</a>
+                        </li>
+
+                        <li class="navbar__list-user-menu-item --separate-line">
+                            <a href="">Đằng xuất</a>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Search -->
+        <div class="search">
+            <div class="search__logo">
+                <a href="http://localhost:3000/" class="search__logo-link">
+                    <img class="search__logo-img" src="https://cf.shopee.vn/file/d11fd04a386cb3e08d6118a6f3dc23b4_tn" alt="Logo">
+                </a>
+            </div>
+
+            <div class="search__box">
+                <div class="search__box-input-container">
+                    <input type="text" class="search__box-input" placeholder="Tìm kiếm sản phẩm">
+
+                    <div class="search__search__box-history">
+                        <header class="search__search__box-history-heading">
+                            <h3>Lịch sử tìm kiếm</h3>
+                        </header>
+                        <ul class="search__search__box-history-list">
+                            <li class="search__search__box-history-item">
+                                <a href="https://shopee.vn/search?noCorrection=true&searchPrefill=1096">Thêm 2 mã freeship vào ví</a>
+                            </li>
+
+                            <li class="search__search__box-history-item">
+                                <a href="https://shopee.vn/search?keyword=k%C3%ADch%20s%C3%B3ng%20wifi%20xiaomi%20ac1200%20mi%20wifi%20range%20extender">Kích sóng wifi Xiaomi AC1200 Mi wifi range extender</a>
+                            </li>
+
+                            <li class="search__search__box-history-item">
+                                <a href="https://shopee.vn/search?keyword=%5Bm%C3%A3%20skampush9%20gi%E1%BA%A3m%2010%25%20%C4%91%C6%A1n%20200k%5D%20s%E1%BB%AFa%20r%E1%BB%ADa%20m%E1%BA%B7t%20simple%20gel%20kind%20to%20skin%20refreshing%20facial%20wash%20gel%20150ml">[mã skampush9 giảm 10% đơn 200k] sữa rửa mặt simple gel kind to skin refreshing facial wash gel 150ml</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="search__box-select">
+                    <span class="search__box-select-label">Trong shop</span>
+                    <i class="search__box-select-icon fas fa-angle-down"></i>
+
+                    <div class="search__box-select-option --bridge">
+                        <ul class="search__box-option">
+                            <li class="search__box-option-item --active">
+                                <span>Trong shop
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </li>
+                            <li class="search__box-option-item">
+                                <span>Ngoài shop
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="search__box-btn btn --btn-primary">
+                    <i class="search__box-btn-icon fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="search__cart">
+                <a class="search__cart-link" href="https://shopee.vn/cart">
+                    <i class="search__cart-icon fas fa-shopping-cart"></i>
+                    <span class="search__cart-quality">4</span>
+
+                    <!-- null items: --null -->
+                    <div class="search__cart-list --bridge --arrow-top">
+                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png" alt="No Cart" class="--null-img">
+                        <span class="--null-msg">Chưa có sản phẩm</span>
+
+                        <header class="search__cart-list-heading">
+                            <h3>Sản phẩm đã thêm</h3>
+                        </header>
+
+                        <!-- cart item -->
+                        <ul class="search__cart-list-items">
+
+                            <li class="search__cart-item">
+                                <img src="https://cf.shopee.vn/file/0644c65cbbf6b38e59c3980f83ea0935_tn" alt="Điện thoại Vsmart Joy 4" class="search__cart-item-img">
+                                <div class="search__cart-item-container">
+                                    <div class="search__cart-item-content">
+
+                                        <span class="search__cart-item-name"> [Mã SKAMPUSH9 giảm 10% đơn 200K] Điện thoại Vsmart Joy 4 (6GB/64GB) - Hàng chính hãng </span>
+
+                                        <div class="search__cart-item-price-wrap">
+                                            <span class="search__cart-item-price --text-primary ">₫2.869.000</span>
+                                            <span class="search__cart-item-multiply">x</span>
+                                            <span class="search__cart-item-quality">1</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="search__cart-item-description">
+                                        <span class="search__cart-item-type">Phân loại hàng: Xanh ngọc lam</span>
+                                        <span class="search__cart-item-remove">Xóa</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="search__cart-item">
+                                <img src="https://cf.shopee.vn/file/fa24c84846ad86d229242faaa9b48129_tn" alt="Điện thoại Xiaomi Redmi Note 10 5G" class="search__cart-item-img">
+                                <div class="search__cart-item-container">
+                                    <div class="search__cart-item-content">
+
+                                        <span class="search__cart-item-name">[Mã SKAMCLU9 giảm 10% đơn 100K] Điện thoại Xiaomi Redmi Note 10 5G (4GB/128GB) - Hàng chính hãng</span>
+
+                                        <div class="search__cart-item-price-wrap">
+                                            <span class="search__cart-item-price --text-primary ">₫5.290.000</span>
+                                            <span class="search__cart-item-multiply">x</span>
+                                            <span class="search__cart-item-quality">1</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="search__cart-item-description">
+                                        <span class="search__cart-item-type">Phân loại hàng: Xám khói</span>
+                                        <span class="search__cart-item-remove">Xóa</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="search__cart-item">
+                                <img src="https://cf.shopee.vn/file/4ac3d7a2859aac37476542e3418db557_tn" alt="Thời trang nam" class="search__cart-item-img">
+                                <div class="search__cart-item-container">
+                                    <div class="search__cart-item-content">
+
+                                        <span class="search__cart-item-name">Sữa rửa mặt dạng bùn Naruko trà tràm Tea Tree Purifying Clay Mask and Cleanser in 1 120 gr</span>
+
+                                        <div class="search__cart-item-price-wrap">
+                                            <span class="search__cart-item-price --text-primary ">₫185.000</span>
+                                            <span class="search__cart-item-multiply">x</span>
+                                            <span class="search__cart-item-quality">1</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="search__cart-item-description">
+                                        <span class="search__cart-item-type"></span>
+                                        <span class="search__cart-item-remove">Xóa</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="search__cart-item">
+                                <img src="https://cf.shopee.vn/file/e4943a37af911853156288843411d4be_tn" alt="Thời trang nam" class="search__cart-item-img">
+                                <div class="search__cart-item-container">
+                                    <div class="search__cart-item-content">
+
+                                        <span class="search__cart-item-name">Kính bơi người lớn mắt kính bơi tráng gương POPO1940 kèm mũ bơi và bịt tai kẹp mũi mắt kiếng bơi nam nữ, cho bé trẻ em</span>
+
+                                        <div class="search__cart-item-price-wrap">
+                                            <span class="search__cart-item-price --text-primary ">₫95.000</span>
+                                            <span class="search__cart-item-multiply">x</span>
+                                            <span class="search__cart-item-quality">1</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="search__cart-item-description">
+                                        <span class="search__cart-item-type">Phân loại hàng: ĐEN 1 CÁI TRÁNG BẠC</span>
+                                        <span class="search__cart-item-remove">Xóa</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="search__cart-btn-view-cart btn --btn-primary">Xem giỏ hàng</button>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-</nav>
+</header>
+
+<!-- Begin: modal -->
+<div class="modal">
+
+    <div class="modal__overlay">
+    </div>
+
+    <div class="modal__container">
+
+        <!-- Register Form -->
+
+        <!-- <div class="auth-form">
+            <div class="auth-form__container">
+
+                <header class="auth-form__header">
+                    <h3 class="auth-form__register">Đăng ký</h3>
+                    <span class="auth-form__switch-btn --text-primary">Đăng nhập</span>
+                </header>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__gourp">
+                        <input type="email" class="auth-form__input" id="inputEmail" name="email" required placeholder="Email của bạn">
+                    </div>
+                    <div class="auth-form__gourp">
+                        <input type="password" class="auth-form__input" id="inputPassword" name="password" required placeholder="Mật khẩu của bạn">
+                    </div>
+                    <div class="auth-form__gourp">
+                        <input type="password" class="auth-form__input" id="inputConfirmPassword" name="confirmPassword" required placeholder="Nhập lại mật khẩu của bạn">
+                    </div>
+                </div>
+
+                <div class="auth-form__aside">
+                    <p class="auth-form__policy-text">
+                        Bằng việc đăng kí, bạn đã đồng ý với F8-Shop về
+                        <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__policy-link --text-primary">Điều khoản dịch vụ</a>
+                        &
+                        <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__policy-link --text-primary">Chính sách bảo mật</a>
+                    </p>
+                </div>
+
+                <div class="auth-form__control">
+                    <button class="btn btn-normal auth-form__control__btn-back">TRỞ LẠI</button>
+                    <button class="btn --btn-primary">ĐĂNG KÝ</button>
+                </div>
+
+            </div>
+
+            <div class="auth-form__social">
+                <a href="" class="auth-form__social--facebook btn btn-size-s --with-icon">
+                    <i class="auth-form__social-icon fab fa-facebook-square"></i>
+                    <span class="auth-form__social-title">
+                        Kết nối với Facebook
+                    </span>
+                </a>
+
+                <a href="" class="auth-form__social--google btn btn-size-s --with-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                        <symbol id="search" viewBox="0 0 512 512">
+                            <title>search</title>
+                            <path
+                                style="fill: #fbbb00"
+                                d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256 c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456 C103.821,274.792,107.225,292.797,113.47,309.408z"
+                            />
+                            <path
+                                style="fill: #518ef8"
+                                d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451 c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535 c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
+                            />
+                            <path
+                                style="fill: #28b446"
+                                d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512 c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771 c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
+                            />
+                            <path
+                                style="fill: #f14336"
+                                d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012 c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0 C318.115,0,375.068,22.126,419.404,58.936z"
+                            />
+                        </symbol>
+                    </svg>
+                    <svg class="auth-form__social-icon icon">
+                        <use xlink:href="#search" />
+                    </svg>
+                    <span class="auth-form__social-title">
+                        Kết nối với Google
+                    </span>
+                </a>
+
+            </div>
+        </div> -->
+
+        <!-- Register Form -->
+
+        <!-- <div class="auth-form">
+            <div class="auth-form__container">
+
+                <header class="auth-form__header">
+                    <h3 class="auth-form__register">Đăng nhập</h3>
+                    <span class="auth-form__switch-btn --text-primary">Đăng ký</span>
+                </header>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__gourp">
+                        <input type="email" class="auth-form__input" id="inputEmail" name="email" required placeholder="Email của bạn">
+                    </div>
+                    <div class="auth-form__gourp">
+                        <input type="password" class="auth-form__input" id="inputPassword" name="password" required placeholder="Mật khẩu của bạn">
+                    </div>
+                </div>
+
+                <div class="auth-form__aside">
+                    <div class="auth-form__help">
+                        <a href="" class="auth-form__help-link --text-primary">Quên mật khẩu</a>
+                        <span class="auth-form__help-separate"></span>
+                        <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                    </div>
+                </div>
+
+                <div class="auth-form__control">
+                    <button class="btn btn-normal auth-form__control__btn-back">TRỞ LẠI</button>
+                    <button class="btn --btn-primary">ĐĂNG NHẬP</button>
+                </div>
+
+            </div>
+
+            <div class="auth-form__social">
+                <a href="" class="auth-form__social--facebook btn btn-size-s --with-icon">
+                    <i class="auth-form__social-icon fab fa-facebook-square"></i>
+                    <span class="auth-form__social-title">
+                        Kết nối với Facebook
+                    </span>
+                </a>
+
+                <a href="" class="auth-form__social--google btn btn-size-s --with-icon">
+                    <svg class="auth-form__social-icon icon">
+                        <use xlink:href="#search" />
+                    </svg>
+                    <span class="auth-form__social-title">
+                        Kết nối với Google
+                    </span>
+                </a>
+
+            </div>
+        </div> -->
+
+
+    </div>
+</div>
+<!-- End: modal -->

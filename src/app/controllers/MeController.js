@@ -3,6 +3,11 @@ const { mongooseToObject } = require('../../util/mongoose');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class MeController {
+    // [GET] /me
+    me(req, res, next) {
+        res.render('./me/me');
+    }
+
     // [GET] /me/course
     course(req, res, next) {
         Promise.all([Courses.find({}), Courses.countDocumentsDeleted()])
@@ -26,11 +31,6 @@ class MeController {
             .catch(next);
     }
 
-    // [GET] /me/me
-    me(req, res, next) {
-        res.render('./me/me');
-    }
-
     // [GET] /me/create
     create(req, res, next) {
         res.render('./me/create');
@@ -46,30 +46,7 @@ class MeController {
             .catch((error) => {});
     }
 
-    // [POST] /me/handle-form-action
-    handleFormAction(req, res, next) {
-        switch (req.body.action) {
-            case 'delete':
-                Courses.delete({ _id: { $in: req.body.courseIds } })
-                    .then(() => res.redirect('back'))
-                    .catch(next);
-                break;
-            case 'restore':
-                Courses.restore({ _id: { $in: req.body.courseIds } })
-                    .then(() => res.redirect('back'))
-                    .catch(next);
-                break;
-            case 'force-delete':
-                Courses.deleteMany({ _id: { $in: req.body.courseIds } })
-                    .then(() => res.redirect('back'))
-                    .catch(next);
-                break;
-            default:
-                res.json({ msg: 'Invalid action!' });
-        }
-    }
-
-    // [GET] /me/edit
+    // [GET] /me/edit-:_id
     edit(req, res, next) {
         Courses.findById(req.params._id)
             .then((course) =>
@@ -94,7 +71,7 @@ class MeController {
             .catch(next);
     }
 
-    // [DELETE] /me/destroy-force-:_id
+    // [DELETE] /me/destroy-:_id/force
     destroyForce(req, res, next) {
         Courses.deleteOne({ _id: req.params._id })
             .then(() => res.redirect('back'))
@@ -106,6 +83,29 @@ class MeController {
         Courses.restore({ _id: req.params._id })
             .then(() => res.redirect('back'))
             .catch(next);
+    }
+
+    // [POST] /me/handle-form-action
+    handleFormAction(req, res, next) {
+        switch (req.body.action) {
+            case 'delete':
+                Courses.delete({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
+            case 'restore':
+                Courses.restore({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
+            case 'force-delete':
+                Courses.deleteMany({ _id: { $in: req.body.courseIds } })
+                    .then(() => res.redirect('back'))
+                    .catch(next);
+                break;
+            default:
+                res.json({ msg: 'Invalid action!' });
+        }
     }
 }
 module.exports = new MeController();

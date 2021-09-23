@@ -1,5 +1,10 @@
 @import 'variables';
 
+html {
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,4 +32,119 @@ h1 {
 
 .checkbox-select-all {
     width: 120px;
+}
+
+:root {
+    --primary-color: #ee4d2d;
+    --height-header: 120px;
+    --height-navbar: 34px;
+    --height-search: calc(var(--height-header) - var(--height-navbar));
+}
+
+.header {
+    z-index: 1;
+}
+
+.header .gird {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header .gird__full-width {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header .gird__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Animation */
+
+@keyframes fideIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hide_notify {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-form));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+
+.header .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    animation: fideIn linear 0.2s;
+    /* Display */
+    display: none;
+}
+
+.header .modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.header .modal__container {
+    --growth-form: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    z-index: 9999;
+    animation: growth linear 0.1s;
+}
+
+/* Button */
+
+.header .btn {
+    min-width: 124px;
+    height: 34px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 0 12px;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .btn-size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.header .btn-normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
