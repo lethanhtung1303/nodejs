@@ -11,6 +11,8 @@ const route = require('./routes');
 
 const db = require('./config/db');
 
+const SortMiddleware = require('./app/middleware/SortMiddleware');
+
 app.use(
     express.urlencoded({
         extended: true,
@@ -32,6 +34,28 @@ app.engine(
         extname: '.hbs',
         helpers: {
             sum: (a, b) => a + b,
+            sortable: (field, sort) => {
+                const icons = {
+                    default: 'fas fa-sort',
+                    asc: 'fas fa-sort-amount-down-alt',
+                    desc: 'fas fa-sort-amount-down',
+                };
+
+                const types = {
+                    default: 'asc',
+                    asc: 'desc',
+                    desc: 'asc',
+                };
+
+                const sortType = field === sort.col ? sort.type : 'default';
+
+                const icon = icons[sortType];
+                const type = types[sortType];
+
+                return `<a href="?_sort&col=${field}&type=${type}">
+                           <i class="${icon}"></i>
+                        </a>`;
+            },
         },
     }),
 );
@@ -43,6 +67,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('*/css', express.static(path.join(__dirname, '/public/css')));
 app.set('views', path.join(__dirname, '/resources/views'));
+
+// Use SortMiddleware
+app.use(SortMiddleware);
 
 // Connect database
 db.connect();
