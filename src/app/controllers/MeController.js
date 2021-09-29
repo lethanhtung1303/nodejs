@@ -51,7 +51,7 @@ class MeController {
         course
             .save()
             .then(() => res.redirect('./course'))
-            .catch((error) => {});
+            .catch(next);
     }
 
     // [GET] /me/edit-:_id

@@ -11,13 +11,6 @@
 
   <div class="d-flex align-items-center">
 
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
-      <label class="form-check-label" for="checkbox-all">
-        All
-      </label>
-    </div>
-
     <div class="form-group my-auto mx-4 checkbox-select-all">
       <select class="form-control form-control-sm select-action" name="action" required>
         <option value=""> --Lựa chọn-- </option>
@@ -27,8 +20,6 @@
     </div>
 
     <button class="btn btn-primary btn-sm btn-check-all "disabled> Thực hiện</button>
-    {{!-- <a class="btn-action-delete" data-toggle="modal" data-target="#actionDeleteCourse" hidden></a> --}}
-
 
   </div>
 
@@ -36,27 +27,37 @@
   <table class="table table-hover mt-4">
     <thead>
       <tr>
-        <th scope="col"></th>
+        <th scope="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+          </div>
+        </th>
         <th scope="col">#</th>
-        <th scope="col">Tên khóa học</th>
-        <th scope="col">Trình độ</th>
-        <th scope="col">Thời gian xóa</th>
-        <th scope="col"></th>
+        <th scope="col">Tên khóa học
+          {{{sortable 'name' _sort}}}
+        </th>
+        <th scope="col">Trình độ
+          {{{sortable 'level' _sort}}}
+        </th>
+        <th scope="col">Thời gian xóa
+          {{{sortable 'deletedAt' _sort}}}
+        </th>
+        <th scope="col">Thao tác</th>
       </tr>
     </thead>
     <tbody>
       {{#each course}}
       <tr>
-        <td>
+        <td scope="col">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" name="courseIds[]" value="{{this._id}}">
           </div>
         </td>
         <td scope="row">{{sum @index 1}}</td>
-        <td>{{this.name}}</td>
-        <td>{{this.level}}</td>
-        <td>{{this.deletedAt}}</td>
-        <td>
+        <td scope="col">{{this.name}}</td>
+        <td scope="col">{{this.level}}</td>
+        <td scope="col">{{this.deletedAt}}</td>
+        <td scope="col">
           <a href="" class="btn btn-restore btn-outline-primary" data-id="{{this._id}}">Khôi phục</a>
           <a href="" class="btn btn-outline-danger" class="btn btn-primary" data-toggle="modal" data-target="#deleteCourse" data-id="{{this._id}}">Xóa vĩnh viễn</a>
         </td>
