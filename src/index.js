@@ -34,6 +34,7 @@ app.engine(
         extname: '.hbs',
         helpers: {
             sum: (a, b) => a + b,
+            
             sortable: (field, sort) => {
                 const icons = {
                     default: 'fas fa-sort',
